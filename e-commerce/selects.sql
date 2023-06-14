@@ -1,5 +1,3 @@
-
-
 --#8
 select 
 	CIDADE.nome as CIDADE,
@@ -11,6 +9,7 @@ inner join ENDERECO on
 	and CIDADE.NOME = 'JAGUARUNA'
 inner join CLIENTE on
 	CLIENTE.endereco = endereco.ID;
+    
 --#9
 select 
 	CLIENTE.nome,
@@ -26,15 +25,14 @@ inner join VENDA_PROD on
 	VENDA_PROD.id = VENDA.ID
 inner join PRODUTO on
 	PRODUTO.ID = VENDA.id;
+    
 --#10
-
 SELECT 
     P.nome, C.DESCRICAO
 FROM
     categoria c
         LEFT JOIN
     produto p ON c.id = p.id;
-
 
 --#11
 SELECT 
@@ -55,7 +53,6 @@ FROM venda
 WHERE data_venda BETWEEN '2023-01-01' AND '2023-12-31'
 GROUP BY DATE(data_venda);
 
-
 --#13
 SELECT 
     c1.nome, venda.data_venda, produto.nome, telefone.NUMERO
@@ -73,5 +70,3 @@ FROM
     telefone ON telefone.id = c2.id
 WHERE
     data_venda = '2023-06-12';
-
-
